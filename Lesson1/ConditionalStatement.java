@@ -10,8 +10,7 @@ public class ConditionalStatement {
 			System.out.println("Это еще ничего не значит");
 		}
 
-		boolean isnotMan = true;
-		if(isnotMan) {
+		if(!isMan) {
 			System.out.println("Вам может быть повезло в этой жизни");
 		}
 

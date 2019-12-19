@@ -11,7 +11,7 @@ public class MyFirstGame {
 				} else {
 					System.out.println("Введенное вами число больше того, что загадал компьютер");
 				}
-			playerNumber--;	
+				playerNumber--;	
 			}	 
 		} else if(playerNumber < randomNumber) {
 			while(playerNumber <= 100) {
@@ -21,7 +21,7 @@ public class MyFirstGame {
 				} else {
 					System.out.println("Введенное вами число меньше того, что загадал компьютер");
 				}
-			playerNumber++;	
+				playerNumber++;	
 			}
 		}		
 	} 				
