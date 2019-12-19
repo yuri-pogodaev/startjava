@@ -6,7 +6,7 @@ public class Variable {
 		long lanSpeed  = 100;
 		float procFrequency = 2.10f;
 		double ram = 4.00f;
-		int i = 120;
+		int modelComp = 120;
 		boolean isTrueComp = false;
 		
 		System.out.println("Количество жестких дисков" + " " + hhd);		
@@ -15,7 +15,7 @@ public class Variable {
 		System.out.println("Скорость интернета" + " " + lanSpeed + " " + "Мбит/с");
 		System.out.println("Частота процессоров" + " " + procFrequency + " " + "ГГц");
 		System.out.println("Оперативная память"+ " " + ram + " " + "ГБ");
-		System.out.println("Модель компьютера" + " " + (char) i);
+		System.out.println("Модель компьютера" + " " + (char) modelComp);
 		System.out.println("Это настоящий компьютер" + " " + isTrueComp);
 	}
 }
