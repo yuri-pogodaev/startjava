@@ -1,4 +1,4 @@
-public class Variables {
+public class Variable {
 	public static void main(String[] args) {
 		byte hhd = 1;
 		short numProc = 4;

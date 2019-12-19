@@ -5,11 +5,13 @@ public class ConditionalStatement {
 			System.out.println("Not at all");
 		}
 
-		boolean isYourMan = true;
-		
-		if(isYourMan == true) {
+		boolean isMan = true;
+		if(isMan) {
 			System.out.println("Это еще ничего не значит");
-		} else if(isYourMan == false) {
+		}
+
+		boolean isnotMan = true;
+		if(isnotMan) {
 			System.out.println("Вам может быть повезло в этой жизни");
 		}
 
@@ -21,11 +23,10 @@ public class ConditionalStatement {
 		}
 
 		String firstNameLetter = "Ю";
-
 		if(firstNameLetter == "М") {
-			System.out.println("Может вас зовут Максим");
-		} else if(firstNameLetter == "N") {
-			System.out.println("Может вас зовут Nлья");
+			System.out.println("Может, вас зовут Максим");
+		} else if(firstNameLetter == "И") {
+			System.out.println("Может, вас зовут Илья");
 		} else {
 			System.out.println("Давай угадай имя");
 		}

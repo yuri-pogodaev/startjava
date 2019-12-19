@@ -6,7 +6,6 @@ public class Cycle {
 		}
 		
 		int j = 6;
-
 		while(j >= -6) {
 			System.out.println(j + " ");
 			j -= 2;
@@ -14,14 +13,12 @@ public class Cycle {
 
 		int sum = 0;
 		int k = 10;
-
 		do {
 			k++;
-			if(k%2 == 1) {
+			if(k % 2 == 1) {
 				sum += k;
 			}
 		} while(k < 20);
-
 		System.out.println(sum);
 	}
 }	
