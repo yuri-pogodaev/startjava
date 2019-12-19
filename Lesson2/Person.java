@@ -1,5 +1,5 @@
 class Person {
-	String male = "man";
+	String gender = "man";
 	String name = "Yuri";
 	float height = 1.82f;
 	float weight = 89.1f;
