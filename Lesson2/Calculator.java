@@ -32,12 +32,13 @@ public class Calculator {
                 if(secondNumber == 0){
                     result = 1;
                 } else{
-                do {
-                counter++;
-                result *= firstNumber;
-                } while (counter <= secondNumber);
+                    do {
+                        counter++;
+                        result *= firstNumber;
+                    } while(counter <= secondNumber);
                 System.out.println(result);
-                break;}
+                break;
+                }
             default :
                 System.out.println("wrong sign");
         }
