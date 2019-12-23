@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Test {
+public class test {
     public static void main(String[] args) {
 
         while (true) {
