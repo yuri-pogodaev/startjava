@@ -15,28 +15,14 @@ public class Jaeger {
 		this.armor = armor ;
 	}
 
-	public String getModelName() {
-        return modelName;
-    }
-
-    public float getHeight() {
-        return height;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public int getSpeed() {
-        return speed;
-    }
-
-    public int getStrength() {
-        return strength;
-    }
-
-    public int getArmor() {
-        return armor;
+	public String toString() {
+        return
+            "Модель " + modelName + '\n' +
+            "Высота " + height + '\n' +
+            "Ширина " + weight + '\n' +
+            "Скорость " + speed + '\n' +
+            "Сила " + strength + '\n' +
+            "Броня " + armor;
     }
 
 	public void useWeapon() {
