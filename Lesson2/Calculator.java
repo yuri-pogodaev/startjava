@@ -28,17 +28,11 @@ public class Calculator {
                 break;
             case "^" :
                 int result = 1;
-                int counter = 1;
-                if(secondNumber == 0){
-                    result = 1;
-                } else{
-                    do {
-                        counter++;
-                        result *= firstNumber;
-                    } while(counter <= secondNumber);
+                for(int counter = 0; counter < secondNumber; counter++){
+                    result *= firstNumber;     
+                }  
                 System.out.println(result);
                 break;
-                }
             default :
                 System.out.println("wrong sign");
         }
