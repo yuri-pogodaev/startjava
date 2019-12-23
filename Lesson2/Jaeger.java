@@ -6,53 +6,38 @@ public class Jaeger {
 	private int strength;
 	private int armor;
 
-	public String getModelName() {
-		return modelName;
-	}
-
-	void setModelName(String modelName) {
+	public Jaeger(String modelName, float height, int weight, int speed, int strength, int armor) {
 		this.modelName = modelName;
-	}
-
-	public float getHeight() {
-		return height;
-	}
-
-	void setHeight(float height) {
 		this.height = height;
-	}
-
-	public int getWeight() {
-		return weight;
-	}
-
-	void setWeight(int weight) {
 		this.weight = weight;
-	}
-
-	public int getSpeed() {
-		return speed;
-	}
-
-	void setSpeed(int speed) {
 		this.speed = speed;
-	}
-
-	public int getStrength() {
-		return strength;
-	}
-
-	void setStrength(int strength) {
 		this.strength = strength;
+		this.armor = armor ;
 	}
 
-	public int getArmor() {
-		return armor;
-	}
+	public String getModelName() {
+        return modelName;
+    }
 
-	void setArmor(int armor) {
-		this.armor = armor;
-	}
+    public float getHeight() {
+        return height;
+    }
+
+    public int getWeight() {
+        return weight;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public int getStrength() {
+        return strength;
+    }
+
+    public int getArmor() {
+        return armor;
+    }
 
 	public void useWeapon() {
 		if(modelName.equals("Crimson Typhoon")) {

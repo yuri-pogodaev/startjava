@@ -28,7 +28,7 @@ public class Calculator {
                 break;
             case "^" :
                 int result = 1;
-                for(int counter = 0; counter < secondNumber; counter++){
+                for(int i = 0; i < secondNumber; i++) {
                     result *= firstNumber;     
                 }  
                 System.out.println(result);
