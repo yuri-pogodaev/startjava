@@ -26,8 +26,8 @@ public class Jaeger {
 	public void usePowerMove() {
 
 	}
-
-    public String toString() {
+	
+	public String toString() {
 		return
 			"Модель " + modelName + '\n' +
 			"Высота " + height + '\n' +
