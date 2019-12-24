@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class GuessNumberTest {
-	public static void main(String[] args) {
-		while (true) {
+    public static void main(String[] args) {
+        while (true) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Введите имя первого парня ");
             String firstName = scanner.nextLine();
