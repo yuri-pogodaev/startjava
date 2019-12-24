@@ -21,6 +21,6 @@ public class GuessNumberTest {
                 answer = scanner.nextLine();
             }
             if (answer.equals("нет")) break;
-		}
-	}
+        }
+    }
 }
