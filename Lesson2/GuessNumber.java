@@ -4,23 +4,17 @@ import java.util.Scanner;
 public class GuessNumber {
     private Player player1;
     private Player player2;
-
+    private int computerNumber;
 
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
         this.player2 = player2;
-    }
-
-    int computerNumber;
-
-    public void initNumber() {
         Random random = new Random();
         computerNumber = random.nextInt((101));
     }
 
-    public void game() {
+    public void startGame() {
         Scanner scanner = new Scanner(System.in);
-        initNumber();
         while (true) {
             System.out.println(player1.getName() + " введите ваше число ");
             player1.setNumber(scanner.nextInt());

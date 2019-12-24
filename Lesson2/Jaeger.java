@@ -15,16 +15,6 @@ public class Jaeger {
 		this.armor = armor ;
 	}
 
-	public String toString() {
-        return
-            "Модель " + modelName + '\n' +
-            "Высота " + height + '\n' +
-            "Ширина " + weight + '\n' +
-            "Скорость " + speed + '\n' +
-            "Сила " + strength + '\n' +
-            "Броня " + armor;
-    }
-
 	public void useWeapon() {
 		if(modelName.equals("Crimson Typhoon")) {
 			System.out.println("You use IB22 Plasmacaster");
@@ -36,4 +26,14 @@ public class Jaeger {
 	public void usePowerMove() {
 
 	}
+
+	public String toString() {
+        return
+            "Модель " + modelName + '\n' +
+            "Высота " + height + '\n' +
+            "Ширина " + weight + '\n' +
+            "Скорость " + speed + '\n' +
+            "Сила " + strength + '\n' +
+            "Броня " + armor;
+    }
 }
