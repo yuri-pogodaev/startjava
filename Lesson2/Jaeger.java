@@ -27,13 +27,13 @@ public class Jaeger {
 
 	}
 
-	public String toString() {
-    	return
-        	"Модель " + modelName + '\n' +
-            "Высота " + height + '\n' +
-            "Ширина " + weight + '\n' +
-            "Скорость " + speed + '\n' +
-            "Сила " + strength + '\n' +
-            "Броня " + armor;
+    public String toString() {
+		return
+			"Модель " + modelName + '\n' +
+			"Высота " + height + '\n' +
+			"Ширина " + weight + '\n' +
+			"Скорость " + speed + '\n' +
+			"Сила " + strength + '\n' +
+			"Броня " + armor;
     }
 }
