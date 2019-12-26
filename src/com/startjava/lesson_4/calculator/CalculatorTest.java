@@ -5,32 +5,11 @@ import java.util.Scanner;
 public class CalculatorTest {
     public static void main(String[] args) {
         while (true) {
-            String[] mathExpression = null;
-            String sign = "";
             Scanner scanner = new Scanner(System.in);
-            System.out.println("Введите математическое выраженте: ");
+            System.out.print("Введите математическое выражение: ");
             String scan = scanner.nextLine();
-            if (scan.contains("/")) {
-                mathExpression = scan.split("/");
-                sign = "/";
-            } else if (scan.contains("^")) {
-                mathExpression = scan.split("\\^");
-                sign = "^";
-            } else if (scan.contains("-")) {
-                mathExpression = scan.split("-");
-                sign = "-";
-            }else if (scan.contains("+")) {
-                mathExpression = scan.split("\\+");
-                sign = "+";
-            } else if (scan.contains("*")) {
-                mathExpression = scan.split("\\*");
-                sign = "*";
-            } else if (scan.contains("%")) {
-                mathExpression = scan.split("%");
-                sign = "%";
-            }
 
-            Calculator calculator = new Calculator(mathExpression[0],mathExpression[1],sign);
+            Calculator calculator = new Calculator(scan);
             calculator.calculate();
             String answer = "";
             while (!(answer.equals("нет") || answer.equals("да"))) {
