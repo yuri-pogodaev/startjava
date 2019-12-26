@@ -1,5 +1,7 @@
 package com.startjava.lesson_4.game;
 
+import java.util.Arrays;
+
 public class Player {
     private String name;
     private int[] array;
