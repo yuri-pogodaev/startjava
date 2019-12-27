@@ -33,7 +33,6 @@ public class GuessNumber {
                 break;
             }
 
-
             if (counter1 == 10) {
                 System.out.println("У " + player1.getName() + " закончились попытки");
             }
