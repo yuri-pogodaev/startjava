@@ -1,17 +1,17 @@
 package com.startjava.lesson_4.calculator;
 
 public class Calculator {
-    private String problem;
+    private String mathExpression;
 
     public Calculator(String problem) {
-        this.problem = problem;
+        this.mathExpression = problem;
     }
 
     public void calculate() {
-        String[] parsedProblem = problem.split(" ");
-        String firstNumber = parsedProblem[0];
-        String sign = parsedProblem[1];
-        String secondNumber = parsedProblem[2];
+        String[] parsedMathExpression = mathExpression.split(" ");
+        String firstNumber = parsedMathExpression[0];
+        String sign = parsedMathExpression[1];
+        String secondNumber = parsedMathExpression[2];
         switch (sign) {
             case "+":
                 System.out.println(Math.addExact(Integer.parseInt(firstNumber), Integer.parseInt(secondNumber)));
