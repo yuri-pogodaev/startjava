@@ -24,7 +24,7 @@ public class Player {
         return puzzledNumbers;
     }
 
-    public int getNumberById(int i) {
+    public int getNumber(int i) {
         return puzzledNumbers[i];
     }
 
@@ -34,7 +34,7 @@ public class Player {
     }
 
     public void refill() {
-        Arrays.fill(puzzledNumbers, 0,counter, 0);
+        Arrays.fill(puzzledNumbers, 0, counter, 0);
     }
 
     @Override

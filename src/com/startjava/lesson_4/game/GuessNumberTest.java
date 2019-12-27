@@ -24,8 +24,6 @@ public class GuessNumberTest {
                 answer = scanner.nextLine();
             }
             if (answer.equals("нет")) break;
-            player1.refill();
-            player2.refill();
         }
     }
 }
