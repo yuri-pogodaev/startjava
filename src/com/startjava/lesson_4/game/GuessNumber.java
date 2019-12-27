@@ -27,16 +27,23 @@ public class GuessNumber {
         while (true) {
 
             playRound(player1, counter1, scanner);
-            if (isWinner) break;
             counter1++;
+            if (isWinner) {
+                printArrays();
+                break;
+            }
+
 
             if (counter1 == 10) {
                 System.out.println("У " + player1.getName() + " закончились попытки");
             }
 
             playRound(player2, counter2, scanner);
-            if (isWinner) break;
             counter2++;
+            if (isWinner) {
+                printArrays();
+                break;
+            }
 
             if (counter2 == 10) {
                 System.out.println("У " + player2.getName() + " закончились попытки");
@@ -52,7 +59,6 @@ public class GuessNumber {
 
         if (player.getNumber(count) == computerNumber) {
             System.out.println("Игрок " + player.getName() + " угадал число " + computerNumber + " с " + (count + 1) + " попытки");
-            printArrays();
             isWinner = true;
         } else if (player.getNumber(count) > computerNumber) {
             System.out.println("Введенное число больше загаданного");
