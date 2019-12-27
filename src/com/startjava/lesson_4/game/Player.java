@@ -4,46 +4,44 @@ import java.util.Arrays;
 
 public class Player {
     private String name;
-    private int[] array;
+    private int[] puzzledNumbers;
+    private int counter;
 
     public Player(String name) {
         this.name = name;
-        this.array = new int[10];
+        puzzledNumbers = new int[10];
     }
 
     public String getName() {
         return name;
     }
 
-    public void refill() {
-        Arrays.fill(array, 0);
-    }
-
     public void setName(String name) {
         this.name = name;
     }
 
-    public int[] getArray() {
-        return array;
+    public int[] getPuzzledNumbers() {
+        return puzzledNumbers;
     }
 
-    public void setArray(int[] array) {
-        this.array = array;
+    public int getNumberById(int i) {
+        return puzzledNumbers[i];
     }
 
-    public void addNumber(int number, int index) {
-        array[index] = number;
+    public void addNumber(int number, int i) {
+        puzzledNumbers[i] = number;
+        counter++;
     }
 
-    public int getNumber(int i) {
-        return array[i];
+    public void refill() {
+        Arrays.fill(puzzledNumbers, 0,counter, 0);
     }
 
     @Override
     public String toString() {
         return "Player{" +
                 "name='" + name + '\'' +
-                ", array=" + Arrays.toString(array) +
+                ", array=" + Arrays.toString(puzzledNumbers) +
                 '}';
     }
 }
