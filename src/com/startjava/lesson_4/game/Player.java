@@ -21,7 +21,6 @@ public class Player {
 
     public int[] getPuzzledNumbers() {
         return Arrays.copyOf(puzzledNumbers,counter);
-        //return puzzledNumbers;
     }
 
     public int getCurrentNumber() {
