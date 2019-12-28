@@ -8,7 +8,7 @@ public class GuessNumber {
     private Player player1;
     private Player player2;
     private int computerNumber;
-    private boolean isWinner = false;
+    Scanner scanner = new Scanner(System.in);
 
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
@@ -18,13 +18,13 @@ public class GuessNumber {
     }
 
     public void startGame() {
-        Scanner scanner = new Scanner(System.in);
+
         System.out.println("У вас 10 попыток");
         while (true) {
-            playRound(player1, scanner);
 
-            if (isWinner) {
-                printEnteredNumbers();
+            if (playRound(player1)) {
+                printEnteredNumbers(player1);
+                printEnteredNumbers(player2);
                 break;
             }
 
@@ -32,9 +32,9 @@ public class GuessNumber {
                 System.out.println("У " + player1.getName() + " закончились попытки");
             }
 
-            playRound(player2, scanner);
-            if (isWinner) {
-                printEnteredNumbers();
+            if (playRound(player2)) {
+                printEnteredNumbers(player2);
+                printEnteredNumbers(player1);
                 break;
             }
 
@@ -48,33 +48,33 @@ public class GuessNumber {
         player2.refill();
     }
 
-    private void playRound(Player player, Scanner scanner) {
-        enterNumber(player, scanner);
-        checkRound(player);
+    private boolean playRound(Player player) {
+        enterNumber(player);
+        return checkNumber(player);
     }
 
-    private void printEnteredNumbers() {
-        System.out.println();
-        for (int a : Arrays.copyOf(player2.getPuzzledNumbers(), player2.getCounter())) System.out.print(a + " ");
-        System.out.println();
-        for (int b : Arrays.copyOf(player1.getPuzzledNumbers(), player1.getCounter())) System.out.print(b + " ");
-        System.out.println();
-    }
-
-    private void enterNumber(Player player, Scanner scanner) {
+    private void enterNumber(Player player) {
         System.out.println(player.getName() + " введите ваше число ");
-        player.addNumber(scanner.nextInt(), player.getCounter());
+        player.addNumber(scanner.nextInt());
     }
 
-    private void checkRound(Player player) {
-        if (player.getNumber(player.getCounter() - 1) == computerNumber) {
+    private boolean checkNumber(Player player) {
+        boolean flag = false;
+        if (player.getNumber() == computerNumber) {
             System.out.println("Игрок " + player.getName() + " угадал число " + computerNumber + " с " + player.getCounter() + " попытки");
-            isWinner = true;
-            System.out.println("Game over");
-        } else if (player.getNumber(player.getCounter() - 1) > computerNumber) {
-            System.out.println("Введенное число больше загаданного" + computerNumber);
-        } else if (player.getNumber(player.getCounter() - 1) < computerNumber) {
-            System.out.println("Введенное число меньше загаданного" + computerNumber);
+            flag = true;
+        } else if (player.getNumber() > computerNumber) {
+            System.out.println("Введенное число больше загаданного");
+        } else if (player.getNumber() < computerNumber) {
+            System.out.println(player.getNumber());
+            System.out.println("Введенное число меньше загаданного");
         }
+        return flag;
+    }
+
+    private void printEnteredNumbers(Player player) {
+        System.out.println();
+        for (int a : Arrays.copyOf(player.getPuzzledNumbers(), player.getCounter())) System.out.print(a + " ");
+        System.out.println();
     }
 }

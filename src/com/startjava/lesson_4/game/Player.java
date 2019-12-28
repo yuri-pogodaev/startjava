@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class Player {
     private String name;
     private int[] puzzledNumbers;
-    private int counter;
+    private int counter = 0;
 
     public Player(String name) {
         this.name = name;
@@ -24,12 +24,12 @@ public class Player {
         return puzzledNumbers;
     }
 
-    public int getNumber(int i) {
-        return puzzledNumbers[i];
+    public int getNumber() {
+        return puzzledNumbers[counter - 1];
     }
 
-    public void addNumber(int number, int i) {
-        puzzledNumbers[i] = number;
+    public void addNumber(int number) {
+        puzzledNumbers[counter] = number;
         counter++;
     }
 
