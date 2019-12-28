@@ -8,8 +8,6 @@ public class GuessNumber {
     private Player player1;
     private Player player2;
     private int computerNumber;
-    private int counter1 = 0;
-    private int counter2 = 0;
     private boolean isWinner = false;
 
     public GuessNumber(Player player1, Player player2) {
@@ -20,58 +18,63 @@ public class GuessNumber {
     }
 
     public void startGame() {
-        player1.refill();
-        player2.refill();
         Scanner scanner = new Scanner(System.in);
         System.out.println("У вас 10 попыток");
         while (true) {
+            playRound(player1, scanner);
 
-            playRound(player1, counter1, scanner);
-            counter1++;
             if (isWinner) {
-                printArrays();
+                printEnteredNumbers();
                 break;
             }
 
-            if (counter1 == 10) {
+            if (player1.getCounter() == 10) {
                 System.out.println("У " + player1.getName() + " закончились попытки");
             }
 
-            playRound(player2, counter2, scanner);
-            counter2++;
+            playRound(player2, scanner);
             if (isWinner) {
-                printArrays();
+                printEnteredNumbers();
                 break;
             }
 
-            if (counter2 == 10) {
+            if (player2.getCounter() == 10) {
                 System.out.println("У " + player2.getName() + " закончились попытки");
                 break;
             }
+
         }
+        player1.refill();
+        player2.refill();
     }
 
-    private void playRound(Player player, int count, Scanner scanner) {
+    private void playRound(Player player, Scanner scanner) {
+        enterNumber(player, scanner);
+        checkRound(player);
+    }
+
+    private void printEnteredNumbers() {
+        System.out.println();
+        for (int a : Arrays.copyOf(player2.getPuzzledNumbers(), player2.getCounter())) System.out.print(a + " ");
+        System.out.println();
+        for (int b : Arrays.copyOf(player1.getPuzzledNumbers(), player1.getCounter())) System.out.print(b + " ");
+        System.out.println();
+    }
+
+    private void enterNumber(Player player, Scanner scanner) {
         System.out.println(player.getName() + " введите ваше число ");
+        player.addNumber(scanner.nextInt(), player.getCounter());
+    }
 
-        player.addNumber(scanner.nextInt(), count);
-
-        if (player.getNumber(count) == computerNumber) {
-            System.out.println("Игрок " + player.getName() + " угадал число " + computerNumber + " с " + (count + 1) + " попытки");
+    private void checkRound(Player player) {
+        if (player.getNumber(player.getCounter() - 1) == computerNumber) {
+            System.out.println("Игрок " + player.getName() + " угадал число " + computerNumber + " с " + player.getCounter() + " попытки");
             isWinner = true;
-        } else if (player.getNumber(count) > computerNumber) {
-            System.out.println("Введенное число больше загаданного");
-        } else if (player.getNumber(count) < computerNumber) {
-            System.out.println("Введенное число меньше загаданного");
+            System.out.println("Game over");
+        } else if (player.getNumber(player.getCounter() - 1) > computerNumber) {
+            System.out.println("Введенное число больше загаданного" + computerNumber);
+        } else if (player.getNumber(player.getCounter() - 1) < computerNumber) {
+            System.out.println("Введенное число меньше загаданного" + computerNumber);
         }
     }
-
-    private void printArrays() {
-        System.out.println();
-        for (int a : Arrays.copyOf(player2.getPuzzledNumbers(), counter2)) System.out.print(a + " ");
-        System.out.println();
-        for (int b : Arrays.copyOf(player1.getPuzzledNumbers(), counter1)) System.out.print(b + " ");
-        System.out.println();
-    }
-
 }

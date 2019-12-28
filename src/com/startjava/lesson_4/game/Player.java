@@ -33,6 +33,10 @@ public class Player {
         counter++;
     }
 
+    public int getCounter() {
+        return counter;
+    }
+
     public void refill() {
         Arrays.fill(puzzledNumbers, 0, counter, 0);
     }
