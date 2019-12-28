@@ -12,9 +12,7 @@ public class GuessNumberTest {
         String secondName = scanner.nextLine();
         Player player2 = new Player(secondName);
         while (true) {
-
             GuessNumber guessNumber = new GuessNumber(player1, player2);
-
             guessNumber.startGame();
 
             String answer = "";
