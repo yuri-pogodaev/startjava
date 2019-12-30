@@ -21,8 +21,6 @@ public class GuessNumber {
         System.out.println("У вас 10 попыток");
         while (true) {
             if (playRound(player1)) {
-                printEnteredNumbers(player1);
-                printEnteredNumbers(player2);
                 break;
             }
 
@@ -31,8 +29,6 @@ public class GuessNumber {
             }
 
             if (playRound(player2)) {
-                printEnteredNumbers(player2);
-                printEnteredNumbers(player1);
                 break;
             }
 
@@ -41,6 +37,8 @@ public class GuessNumber {
                 break;
             }
         }
+        printEnteredNumbers(player1);
+        printEnteredNumbers(player2);
         player1.refill();
         player2.refill();
     }
@@ -59,13 +57,13 @@ public class GuessNumber {
         if (player.getCurrentNumber() == computerNumber) {
             System.out.println("Игрок " + player.getName() + " угадал число " + computerNumber + " с " + player.getCounter() + " попытки");
             return true;
-        } else if (player.getCurrentNumber() > computerNumber) {
-            System.out.println("Введенное число больше загаданного");
-            return false;
-        } else if (player.getCurrentNumber() < computerNumber) {
-            System.out.println(player.getCurrentNumber());
-            System.out.println("Введенное число меньше загаданного");
-            return false;
+        } else if (player.getCurrentNumber() != computerNumber) {
+            if (player.getCurrentNumber() > computerNumber) {
+                System.out.println("Введенное число больше загаданного");
+            } else if (player.getCurrentNumber() < computerNumber) {
+                System.out.println(player.getCurrentNumber());
+                System.out.println("Введенное число меньше загаданного");
+            }
         }
         return false;
     }

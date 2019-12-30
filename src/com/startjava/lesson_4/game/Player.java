@@ -6,6 +6,7 @@ public class Player {
     private String name;
     private int[] puzzledNumbers;
     private int counter = 0;
+
     public Player(String name) {
         this.name = name;
         puzzledNumbers = new int[10];
@@ -20,7 +21,7 @@ public class Player {
     }
 
     public int[] getPuzzledNumbers() {
-        return Arrays.copyOf(puzzledNumbers,counter);
+        return Arrays.copyOf(puzzledNumbers, counter);
     }
 
     public int getCurrentNumber() {
@@ -37,7 +38,7 @@ public class Player {
     }
 
     public void refill() {
-        Arrays.fill(puzzledNumbers, 0, counter , 0);
+        Arrays.fill(puzzledNumbers, 0, counter, 0);
         counter = 0;
     }
 
