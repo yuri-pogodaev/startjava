@@ -57,13 +57,11 @@ public class GuessNumber {
         if (player.getCurrentNumber() == computerNumber) {
             System.out.println("Игрок " + player.getName() + " угадал число " + computerNumber + " с " + player.getCounter() + " попытки");
             return true;
-        } else if (player.getCurrentNumber() != computerNumber) {
-            if (player.getCurrentNumber() > computerNumber) {
-                System.out.println("Введенное число больше загаданного");
-            } else if (player.getCurrentNumber() < computerNumber) {
-                System.out.println(player.getCurrentNumber());
-                System.out.println("Введенное число меньше загаданного");
-            }
+        } else if (player.getCurrentNumber() > computerNumber) {
+            System.out.println("Введенное число больше загаданного");
+        } else if (player.getCurrentNumber() < computerNumber) {
+            System.out.println(player.getCurrentNumber());
+            System.out.println("Введенное число меньше загаданного");
         }
         return false;
     }
